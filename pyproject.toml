@@ -1,3 +1,62 @@
+[tool.poetry]
+name = "hierarchicalforecast"
+version = "1.0.1"
+description = "Hierarchical Methods Time Series Forecasting"
+authors = ["Nixtla <business@nixtla.io>"]
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/Nixtla/hierarchicalforecast/"
+homepage = "https://nixtla.github.io/hierarchicalforecast/"
+keywords = ["time-series", "forecasting", "datasets", "hierarchical"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Natural Language :: English"
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+numpy = "*"
+numba = "*"
+pandas = "*"
+scikit-learn = ">=1.2"
+quadprog = "*"
+matplotlib = "*"
+narwhals = ">=1.13.5"
+intel-cmplr-lib-rt = { version = "*", markers = 'platform_system != "Darwin" and platform_machine == "x86_64"' }
+
+[tool.poetry.group.dev.dependencies]
+datasetsforecast = "*"
+nbdev = "*"
+statsforecast = ">=1.0.0"
+requests = "*"
+scipy = "*"
+pre-commit = "*"
+ruff = "*"
+black = "*"
+pytest = "*"
+pytest-benchmark = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+
+
+
 [tool.ruff.lint]
 select = [
     "F",  # pyflakes
